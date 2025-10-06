@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Visualisasi Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Praktikum Visualisasi Data</h1>
+        <p>Pemilihan Grafik Berdasarkan Jenis Data & Audiens</p>
+    </header>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="dataType">Jenis Data:</label>
+            <select id="dataType">
+                <option value="categorical">Kategorikal (Produk)</option>
+                <option value="temporal">Temporal (Bulanan)</option>
+                <option value="comparison">Perbandingan (Region)</option>
+                <option value="sales_over_years">Penjualan 10 Tahun (2015-2025)</option>
+                <option value="top_products">Top 5 Produk Terlaris</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="audience">Profil Audiens:</label>
+            <select id="audience">
+                <option value="executive">Eksekutif</option>
+                <option value="technical">Teknis</option>
+                <option value="general">Umum</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="chartType">Jenis Grafik:</label>
+            <select id="chartType">
+                <option value="bar">Diagram Batang</option>
+                <option value="line">Line Chart</option>
+                <option value="doughnut">Pie Chart (Donut)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <button id="generateBtn">Tampilkan Visualisasi</button>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="dataChart"></canvas>
+    </div>
+
+    <div class="analysis" id="analysisText">
+        <h3>Analisis Visualisasi</h3>
+        <p>Pilih jenis data dan audiens, lalu klik tombol untuk melihat visualisasi yang sesuai.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
