@@ -1,4 +1,3 @@
-// Data untuk visualisasi
 const data = {
     categorical: {
         labels: ['Elektronik', 'Pakaian', 'Makanan', 'Buku', 'Olahraga'],
@@ -27,7 +26,6 @@ const data = {
     }
 };
 
-// Analisis berdasarkan pilihan
 const analysis = {
     categorical: {
         executive: "Bar chart cocok untuk audiens eksekutif yang perlu melihat perbandingan antar kategori secara cepat dan jelas.",
@@ -58,20 +56,15 @@ const analysis = {
 
 let myChart = null;
 
-// Fungsi untuk menghasilkan visualisasi
 function generateVisualization() {
     const dataType = document.getElementById('dataType').value;
     const audience = document.getElementById('audience').value;
     const chartType = document.getElementById('chartType').value;
     
-    // Hancurkan chart sebelumnya jika ada
     if (myChart) {
         myChart.destroy();
     }
-
     const ctx = document.getElementById('dataChart').getContext('2d');
-
-    // Tentukan data dan konfigurasi berdasarkan dataType dan chartType
     let chartData = {
         labels: data[dataType].labels,
         datasets: [{
@@ -113,10 +106,8 @@ function generateVisualization() {
         }
     };
 
-    // Buat chart
     myChart = new Chart(ctx, config);
 
-    // Tampilkan analisis
     let analysisKey = dataType;
     if (dataType !== 'categorical' && dataType !== 'temporal' && dataType !== 'comparison') {
         analysisKey = dataType;
@@ -129,10 +120,8 @@ function generateVisualization() {
     `;
 }
 
-// Event listener untuk tombol
 document.getElementById('generateBtn').addEventListener('click', generateVisualization);
 
-// Generate chart pertama kali saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
     generateVisualization();
 });
